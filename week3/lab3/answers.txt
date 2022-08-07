@@ -1,0 +1,24 @@
+sort1 uses: Bubble Sort
+
+How do you know?: O (n^2) / omega (n) => even with non-repeatability factor of computation time, the time to sort the sorted type of files is better compared with other tho algorithms (sort2 & sort 3) due to the omega(n) permutations
+
+sort2 uses: Merge Sort
+
+How do you know?: theta(n log n) => the sort2 gives the best time for reversed / shuffled types of values (for sorted values t{sorted2} > t{sorted1} as omega(n log n) )
+
+sort3 uses: Selection Sort
+
+How do you know?: theta(n^2) => the computing time close for sorting files type reversed vs random
+
+1st run ($ time ./sortX xxxxxx50000.txt)
+50000 lines 	reversed	sorted	random
+sort1	        14.265	    3.124	17.807
+sort2	        6.314	    4.466	3.456
+sort3	        10.29	    10.156	7.936
+
+2nd run ($ time ./sortX xxxxxx50000.txt)
+50000 lines	    reversed	sorted	random
+sort1	        16.248	    3.32	16.664
+sort2	        3.261	    4.59	4.736
+sort3	        12.656	    8.93	8.859
+

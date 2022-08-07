@@ -1,0 +1,41 @@
+// Blur image
+void blur(int height, int width, RGBTRIPLE image[height][width])
+{
+    for (int i = 0;  i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            // apply the blur-box only for complete blur grid matrix
+            if ((i - 1 >= 0) && (j - 1 >= 0) && (i + 1 < height) && (j + 1 < width))
+            {
+                // red average
+                /*
+                int redAverage = round (image[i - 1][j - 1].rgbtRed + image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed +
+                             image[i][j - 1].rgbtRed + image[i][j].rgbtRed + image[i][j + 1].rgbtRed +
+                             image[i + 1][j - 1].rgbtRed + image[i + 1][j].rgbtRed + image[i + 1][j + 1].rgbtRed) / 9;
+                */
+                int redAverage = colAvg(i, j, height, width, image, 'r');
+                //green average
+                /*
+                int greenAverage = round(image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen +
+                               image[i][j - 1].rgbtGreen + image[i][j].rgbtGreen + image[i][j + 1].rgbtGreen +
+                               image[i + 1][j - 1].rgbtGreen + image[i + 1][j].rgbtGreen + image[i + 1][j + 1].rgbtGreen) / 9;
+                */
+                int greenAverage = colAvg(i, j, height, width, image, 'g');
+
+                //blue average
+                /*
+                int blueAverage = round(image[i - 1][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue +
+                              image[i][j - 1].rgbtBlue + image[i][j].rgbtBlue + image[i][j + 1].rgbtBlue +
+                              image[i + 1][j - 1].rgbtBlue + image[i + 1][j].rgbtBlue + image[i + 1][j + 1].rgbtBlue) / 9;
+                */
+                int blueAverage = colAvg(i, j, height, width, image, 'b');
+
+                image[i][j].rgbtRed = redAverage;
+                image[i][j].rgbtGreen = greenAverage;
+                image[i][j].rgbtBlue = blueAverage;
+            }
+        }
+    }
+    return;
+}

@@ -1,0 +1,22 @@
+# ./tideman Alice Bob Charlie David Emily < data21nov.txt
+4
+Bob
+David
+Alice
+Charlie
+Emily
+Bob
+Emily
+Charlie
+David
+Alice
+Emily
+David
+Bob
+Alice
+Charlie
+Alice
+Emily
+Bob
+David
+Charlie
